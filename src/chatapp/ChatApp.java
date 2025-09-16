@@ -10,9 +10,6 @@ package chatapp;
  */
 public class ChatApp {
 
-    /**
-     * @param args the command line arguments
-     */
     public static String username = "", password = "", phoneNumber = "";
     public static boolean registeredUser = false, loggedIn = false;
     
@@ -20,11 +17,11 @@ public class ChatApp {
         
         
         while (!registeredUser) {
-            new Register();
+            Register register = new Register();
         }
         
         while (!loggedIn) {
-            new Login();
+            Login login = new Login();
         }
         
         System.out.println("Welcome " + username + " It is great to see you.");
