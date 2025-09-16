@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class RegisterTest {
     
-        @Test
+    @Test
     public void usernameCorrectlyFormatted() {
         System.out.println("verifyUsername");
         String username = "kyl_1";
@@ -24,7 +24,7 @@ public class RegisterTest {
         fail("The test case is a prototype.");
     }
     
-        @Test
+    @Test
     public void usernameIncorrectlyFormatted() {
         System.out.println("verifyUsername");
         String username = "kyle!!!!!!!";
@@ -84,4 +84,5 @@ public class RegisterTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    
 }
