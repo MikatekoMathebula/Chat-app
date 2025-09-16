@@ -20,25 +20,33 @@ public class Register {
         System.out.print("Username: ");
         ChatApp.username = scanner.nextLine();
         
-        if (!checkUsername(ChatApp.username)) {
+        while (!checkUsername(ChatApp.username)) {
             System.out.println("Invalid Username. Must contain an underscore and be less than 5 characters long");
-            return;
-        } else {
-            System.out.println("Username captured successfully");
+            System.out.print("Username: ");
+            ChatApp.username = scanner.nextLine(); 
         }
+        
+        System.out.println("Username captured successfully");
         
         System.out.print("Password: ");
         ChatApp.password = scanner.nextLine();
         
-        if (!checkPsswordComplexity(ChatApp.password)) {
+        while (!checkPsswordComplexity(ChatApp.password)) {
             System.out.println("Invalid Password. Must be atleast 8 characters long, contain a special character, a digit, and a capital letter");
-            return;
-        } else {
-            System.out.println("Password captured successfully");
+            System.out.print("Password: ");
+            ChatApp.password = scanner.nextLine();
         }
+        
+        System.out.println("Password captured successfully");
         
         System.out.print("Phone number: ");
         ChatApp.phoneNumber = scanner.nextLine();
+        
+        while (!checkCellPhoneNumber(ChatApp.phoneNumber)) {
+            System.out.println("Invalid phone number. Must start with a valid country code, followed by numbers less than 10 digits");
+            System.out.print("Phone number: ");
+            ChatApp.phoneNumber = scanner.nextLine();
+        }
         
         System.out.println(registerUser());
     }
