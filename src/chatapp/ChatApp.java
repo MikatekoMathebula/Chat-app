@@ -25,6 +25,18 @@ public class ChatApp {
         }
         
         System.out.println("Welcome " + username + " It is great to see you.");
+        
+        int selectedMenu;
+        while (true) {
+            
+            System.out.println("Menu");
+            
+            System.out.print("1. Send Message");
+            System.out.print("2. Show recently sent messages");
+            System.out.print("3. Exit");
+            
+        }
+        
     }
     
 }

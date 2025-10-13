@@ -5,6 +5,8 @@
 package chatapp;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -36,6 +38,47 @@ public class Login {
             ChatApp.loggedIn = false;
             return "Incorrect username or password";
         }
+    }
+    
+        public static boolean checkUsername (String username) {
+        return username.length() <= 5 && username.contains("_");
+    }
+    
+    public static boolean checkPasswordComplexity (String password) {
+        // variable that defines if the password is valid or not
+        boolean isValid = false;
+        
+        Pattern specialCharacters = Pattern.compile("[^A-Za-z0-9]");
+        Pattern upperCases = Pattern.compile("[A-Z]");
+        
+        Matcher charMatcher = specialCharacters.matcher(password);
+        boolean hasSpecialCharacter = charMatcher.find();
+        
+        Matcher capitalMatcher = upperCases.matcher(password);
+        boolean hasCapitalLetter = capitalMatcher.find();
+        
+        boolean lengthIsValid = password.length() >= 8;
+        
+        boolean hasDigit = false;
+        for(char letter : password.toCharArray()) {
+            if (Character.isDigit(letter)) {
+                hasDigit = true;
+                break;
+            }
+        }
+        
+        if (lengthIsValid && hasSpecialCharacter && hasCapitalLetter && hasDigit) {
+            isValid = true;
+        }
+        
+        return isValid;
+    }
+    
+    public static boolean checkCellPhoneNumber (String phoneNumber) {
+        String regex = "^\\+27\\d{9}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
     }
     
 }
