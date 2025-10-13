@@ -74,28 +74,32 @@ public class Message {
                 
                 System.out.println("done");
                 
-//                Message newMessage = new Message(messageID, noOfMessages, recipient, message, messageHash, sendMessage);
-                
                 // Construct the string to be displayed
-                String messageDetails = "MessageID: " + messageID + "\n" + "Message Hash: " + messageHash + "\n" + "Recipient: " + recipient + "\n" + "Message: " + message;
+                String messageDetails = "MessageID: " + messageID + "\n"
+                        + "Message Hash: " + messageHash + "\n"
+                        + "Recipient: " + recipient + "\n"
+                        + "Message: " + message;
 
                 // Display the message in a dialog box
+                // It works and you need to minimize netbeans to see it
                 JOptionPane.showMessageDialog(null, messageDetails);
                 System.out.println("Done");
             }
+            
+            storeMessage();
             
             // Initialize a counter variable
             int totalMessagesSent = 0;
 
             // Loop or method calls for sending messages
             // For each message sent, increment the counter
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < messages.size(); i++) {
                 // Code to send a message...
                 totalMessagesSent++;
-}
+}           
 
             // After all messages have been sent, display the total count
-            JOptionPane.showMessageDialog(null, "Total number of messages sent: " + totalMessagesSent, "Summary", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Total number of messages sent: " + returnTotalMessagess(), "Summary", JOptionPane.INFORMATION_MESSAGE);
             
             return true;
         } catch (NumberFormatException e) {
@@ -142,11 +146,17 @@ public class Message {
     }
     
     public static int returnTotalMessagess() {
-        return 1;
+        int sentMessages = 0;
+        for (String message : sendMessages) {
+            if ("Send Message".equals(message)) {
+                sentMessages += 1;
+            }
+        }
+        return sentMessages;
     }
     
     public static void storeMessage() {
-        
+        Message newMessage = new Message(messageID, noOfMessages, recipient, message, messageHash, sendMessage);
     }
     
     

@@ -18,7 +18,7 @@ public class RegisterTest {
         System.out.println("verifyUsername");
         String username = "kyl_1";
         boolean expResult = true;
-        boolean result = Register.checkUsername(username);
+        boolean result = Login.checkUsername(username);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -29,7 +29,7 @@ public class RegisterTest {
         System.out.println("verifyUsername");
         String username = "kyle!!!!!!!";
         boolean expResult = false;
-        boolean result = Register.checkUsername(username);
+        boolean result = Login.checkUsername(username);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -43,7 +43,7 @@ public class RegisterTest {
         System.out.println("checkPsswordComplexity");
         String password = "Ch&&sec@ke99!";
         boolean expResult = true;
-        boolean result = Register.checkPsswordComplexity(password);
+        boolean result = Login.checkPasswordComplexity(password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -54,7 +54,7 @@ public class RegisterTest {
         System.out.println("checkPsswordComplexity");
         String password = "password";
         boolean expResult = false;
-        boolean result = Register.checkPsswordComplexity(password);
+        boolean result = Login.checkPasswordComplexity(password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -68,7 +68,7 @@ public class RegisterTest {
         System.out.println("validPhoneNumber");
         String phoneNumber = "+27838968976";
         boolean expResult = true;
-        boolean result = Register.checkCellPhoneNumber(phoneNumber);
+        boolean result = Login.checkCellPhoneNumber(phoneNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -79,7 +79,7 @@ public class RegisterTest {
         System.out.println("validPhoneNumber");
         String phoneNumber = "08966553";
         boolean expResult = false;
-        boolean result = Register.checkCellPhoneNumber(phoneNumber);
+        boolean result = Login.checkCellPhoneNumber(phoneNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
